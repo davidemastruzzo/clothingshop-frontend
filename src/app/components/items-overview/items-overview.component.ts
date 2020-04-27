@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ItemService} from '../../services/item.service';
+import {Item} from '../../entities/item';
 
 @Component({
   selector: 'app-items-overview',
@@ -7,13 +8,21 @@ import {ItemService} from '../../services/item.service';
   styleUrls: ['./items-overview.component.css']
 })
 export class ItemsOverviewComponent implements OnInit {
+  items: Item[];
 
   constructor(private itemService: ItemService) { }
 
   ngOnInit() {
-    this.itemService.getAllItems().subscribe(items => {
-      console.log(items);
+    this.itemService.getAllItems().subscribe(response => {
+      this.items = response;
     });
   }
 
+  showDetails(item: Item) {
+
+  }
+
+  addToShoppingCart(item: Item) {
+    
+  }
 }

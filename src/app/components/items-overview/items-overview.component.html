@@ -1,3 +1,15 @@
-<p>
-  items-overview works!
-</p>
+<div class="overview-container">
+  <mat-card *ngFor="let item of items" class="overview-item" (click)="showDetails(item)">
+    <mat-card-title>{{item.name}}</mat-card-title>
+    <mat-card-subtitle>{{item.category}}</mat-card-subtitle>
+    <img mat-card-image src="{{item.pictures[0].imageURL}}" alt="{{item.name}}" class="overview-image">
+    <mat-card-content>
+      {{item.price}}
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-icon-button (click)="addToShoppingCart(item)">
+        <mat-icon>add_shopping_cart</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
