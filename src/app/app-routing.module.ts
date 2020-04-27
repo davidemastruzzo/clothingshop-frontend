@@ -5,8 +5,9 @@ import {ItemsOverviewComponent} from './components/items-overview/items-overview
 
 
 const routes: Routes = [
-  {path: "/item-details", component: ItemDetailsComponent},
-  {path: "/items-overview", component: ItemsOverviewComponent}
+  {path: '', component: ItemsOverviewComponent },
+  {path: 'item-details', component: ItemDetailsComponent},
+  {path: 'items-overview', component: ItemsOverviewComponent}
 ];
 
 @NgModule({
