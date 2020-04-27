@@ -7,11 +7,11 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class ItemService {
-  private BASE_URI = "http://localhost:8080/rest/";
+  private BASE_URI = 'http://localhost:8080/rest/';
 
   constructor(private http: HttpClient) { }
 
   public getAllItems(): Observable<Item[]>{
-    return this.http.get<Item[]>(this.BASE_URI+"item");
+    return this.http.get<Item[]>(this.BASE_URI + 'item');
   }
 }
