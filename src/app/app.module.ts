@@ -8,6 +8,7 @@ import { ItemDetailsComponent } from './components/item-details/item-details.com
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http';
 import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
@@ -23,6 +24,8 @@ import {MatIconModule} from '@angular/material/icon';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
