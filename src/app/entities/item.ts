@@ -6,7 +6,7 @@ export class Item {
   pictures: Picture[];
 }
 
-class Picture {
+export class Picture {
   id: number;
   imageURL: string;
 }

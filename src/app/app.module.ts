@@ -10,6 +10,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +21,7 @@ import {MatIconModule} from '@angular/material/icon';
     ItemsOverviewComponent,
     ItemDetailsComponent,
     ShoppingCartComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +30,10 @@ import {MatIconModule} from '@angular/material/icon';
     MatIconModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatCardModule,
+    MatIconModule,
+    MatButtonToggleModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
