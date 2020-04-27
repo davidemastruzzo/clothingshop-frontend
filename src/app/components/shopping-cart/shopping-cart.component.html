@@ -1,3 +1,27 @@
-<p>
-  shopping-cart works!
-</p>
+<div class="content">
+  <mat-card class="overview-item">
+    <mat-card-title>Cart</mat-card-title>
+    <mat-card-content class="item" *ngFor="let item of cartService.getCartItems()">
+      <span class="item-name">
+        {{item.name}}
+      </span>
+      <span class="item-category">
+        {{item.category}}
+      </span>
+      <span class="item-price">
+        {{item.price}}Fr
+      </span>
+      <mat-icon (click)="removeOne(item)">remove_circle</mat-icon>
+      <span class="item-amount">
+        {{item.amount}}x
+      </span>
+      <mat-icon (click)="addOne(item)">add_circle</mat-icon>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-icon-button>
+        <mat-icon>payment</mat-icon>
+        Pay
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

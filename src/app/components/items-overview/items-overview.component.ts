@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ItemService} from '../../services/item.service';
 import {Item} from '../../entities/item';
+import {CartService} from '../../services/cart.service';
 
 @Component({
   selector: 'app-items-overview',
@@ -10,7 +11,7 @@ import {Item} from '../../entities/item';
 export class ItemsOverviewComponent implements OnInit {
   items: Item[];
 
-  constructor(private itemService: ItemService) { }
+  constructor(private itemService: ItemService, private cartService: CartService) { }
 
   ngOnInit() {
     this.itemService.getAllItems().subscribe(response => {
@@ -23,6 +24,6 @@ export class ItemsOverviewComponent implements OnInit {
   }
 
   addToShoppingCart(item: Item) {
-    
+    this.cartService.items.push(item);
   }
 }

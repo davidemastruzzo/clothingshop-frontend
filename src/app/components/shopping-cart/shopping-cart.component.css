@@ -1,0 +1,31 @@
+.overview-container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.overview-item {
+  width: 50em;
+  margin: 3em;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.overview-image {
+  width: auto;
+  height: 20em;
+  max-width: 20em;
+}
+
+.content {
+  margin-left: 10px;
+}
+
+.item-name {
+  font-weight: bolder;
+}
+
+.item-category {
+  font-weight: lighter;
+}

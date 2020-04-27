@@ -1,12 +1,10 @@
+import {Picture} from './picture';
+
 export class Item {
   id: number;
   name: string;
-  price: string;
+  price: number;
+  description: string;
   category: string;
   pictures: Picture[];
-}
-
-export class Picture {
-  id: number;
-  imageURL: string;
 }
