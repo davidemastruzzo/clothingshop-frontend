@@ -3,6 +3,6 @@
 
   <div id="router-links">
     <a [routerLink]="['/items-overview']" >Items</a>
-    <a [routerLink]="['/cart']"><mat-icon>shopping_cart</mat-icon></a>
+    <a [routerLink]="['/cart']"><mat-icon>shopping_cart</mat-icon> {{cartService.getTotalAmountOfItems()}}</a>
   </div>
 </header>

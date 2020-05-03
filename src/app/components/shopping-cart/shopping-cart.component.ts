@@ -23,10 +23,14 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   addOne(item: CartItem) {
-    item.amount += 1;
+    this.cartService.addItem(item);
   }
 
   removeOne(item: CartItem) {
-    item.amount -= 1;
+    this.cartService.removeItem(item);
+    if (item.amount === 0) {
+      const itemToBeRemoved = this.cartItems.find(cartItem => item.id === cartItem.id);
+      this.cartItems.splice(this.cartItems.indexOf(itemToBeRemoved), 1);
+    }
   }
 }

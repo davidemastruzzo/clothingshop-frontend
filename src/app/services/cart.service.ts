@@ -28,4 +28,26 @@ export class CartService {
     return cartItems;
   }
 
+  public getTotalAmountOfItems(): number {
+    let amount = 0;
+    this.getCartItems().forEach(cartItem => {
+      amount = amount + cartItem.amount;
+    });
+
+    return amount;
+  }
+
+  public addItem(cartItem: CartItem): void {
+    const itemToBeAdded = this.items.find(item => item.id === cartItem.id);
+    this.items.push(itemToBeAdded);
+    cartItem.amount += 1;
+    console.log(this.items);
+  }
+
+  public removeItem(cartItem: CartItem): void {
+    const itemToBeRemoved = this.items.find(item => item.id === cartItem.id);
+    this.items.splice(this.items.indexOf(itemToBeRemoved), 1);
+    cartItem.amount -= 1;
+    console.log(this.items);
+  }
 }
