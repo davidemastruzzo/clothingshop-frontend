@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {ItemService} from '../../services/item.service';
-import {Item} from '../../entities/item';
+import {Component, OnInit} from '@angular/core';
+import {DetailService} from '../../services/detail.service';
+import {CartService} from '../../services/cart.service';
 
 @Component({
   selector: 'app-item-details',
@@ -9,9 +9,7 @@ import {Item} from '../../entities/item';
 })
 export class ItemDetailsComponent implements OnInit {
 
-  public item: Item;
-
-  constructor(private itemService: ItemService) { }
+  constructor(public detailsService: DetailService, public cartService: CartService) { }
 
   ngOnInit() {
   }

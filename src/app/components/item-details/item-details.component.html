@@ -1,3 +1,24 @@
-<p>
-  item-details works!
-</p>
+<div id="detail-container">
+  <mat-card id="detail-item">
+    <div id="content-left">
+      <mat-card-title>{{detailsService.item.name}}</mat-card-title>
+      <mat-card-subtitle>{{detailsService.item.category}}</mat-card-subtitle>
+      <img mat-card-image src="{{detailsService.item.pictures[0].imageURL}}" alt="{{detailsService.item.name}}"
+           class="overview-image">
+      <mat-card-content>
+        {{detailsService.item.price}} Fr
+      </mat-card-content>
+    </div>
+    <div id="content-right">
+      <mat-card-content>
+        {{detailsService.item.description}}
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-icon-button (click)="cartService.addToShoppingCart(detailsService.item)">
+          <mat-icon>add_shopping_cart</mat-icon>
+        </button>
+        <span>Add to cart</span>
+      </mat-card-actions>
+    </div>
+  </mat-card>
+</div>

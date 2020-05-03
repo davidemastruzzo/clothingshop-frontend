@@ -1,13 +1,15 @@
 <div class="overview-container">
-  <mat-card *ngFor="let item of items" class="overview-item" (click)="showDetails(item)">
-    <mat-card-title>{{item.name}}</mat-card-title>
-    <mat-card-subtitle>{{item.category}}</mat-card-subtitle>
-    <img mat-card-image src="{{item.pictures[0].imageURL}}" alt="{{item.name}}" class="overview-image">
-    <mat-card-content>
-      {{item.price}} Fr
-    </mat-card-content>
+  <mat-card *ngFor="let item of itemService.items" class="overview-item">
+    <div (click)="detailService.showItem(item)">
+      <mat-card-title>{{item.name}}</mat-card-title>
+      <mat-card-subtitle>{{item.category}}</mat-card-subtitle>
+      <img mat-card-image src="{{item.pictures[0].imageURL}}" alt="{{item.name}}" class="overview-image">
+      <mat-card-content>
+        {{item.price}} Fr
+      </mat-card-content>
+    </div>
     <mat-card-actions>
-      <button mat-icon-button (click)="addToShoppingCart(item)">
+      <button mat-icon-button (click)="cartService.addToShoppingCart(item)">
         <mat-icon>add_shopping_cart</mat-icon>
       </button>
     </mat-card-actions>

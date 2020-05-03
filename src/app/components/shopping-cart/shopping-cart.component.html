@@ -1,17 +1,19 @@
 <div class="content">
   <mat-card class="overview-item">
     <mat-card-title>Cart</mat-card-title>
-    <mat-card-content class="item" *ngFor="let item of cartItems" (click)="showDetails(item)" >
-      <img src="{{item.pictures[0].imageURL}}" alt="{{item.name}}" class="overview-image">
-      <span class="item-name">
+    <mat-card-content class="item" *ngFor="let item of cartItems">
+      <div (click)="detailService.showCartItem(item)" >
+        <img src="{{item.pictures[0].imageURL}}" alt="{{item.name}}" class="overview-image">
+        <span class="item-name">
         {{item.name}}
       </span>
-      <span class="item-category">
+        <span class="item-category">
         {{item.category}}
       </span>
-      <span class="item-price">
+        <span class="item-price">
         {{item.price}}Fr
       </span>
+      </div>
       <mat-icon (click)="removeOne(item)">remove_circle</mat-icon>
       <span class="item-amount">
         {{item.amount}}x

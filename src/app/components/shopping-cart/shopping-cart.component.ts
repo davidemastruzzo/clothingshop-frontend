@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CartService} from '../../services/cart.service';
-import {Item} from '../../entities/item';
 import {CartItem} from '../../entities/cart-item';
+import {DetailService} from '../../services/detail.service';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -12,15 +12,11 @@ export class ShoppingCartComponent implements OnInit {
 
   cartItems: CartItem[] = [];
 
-  constructor(public cartService: CartService) {
+  constructor(public cartService: CartService, public detailService: DetailService) {
   }
 
   ngOnInit() {
     this.cartItems = this.cartService.getCartItems();
-  }
-
-  showDetails(item: CartItem) {
-    console.log('show detail');
   }
 
   addOne(item: CartItem) {

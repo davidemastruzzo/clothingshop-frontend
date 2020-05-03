@@ -1,0 +1,27 @@
+#detail-container {
+  margin-top: 5px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#detail-item {
+  margin: 3em;
+  display: flex;
+  overflow: hidden;
+}
+
+#content-left {
+  display: flex;
+  flex-direction: column;
+}
+
+#content-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.overview-image {
+  width: auto;
+  height: 40em;
+  max-width: 40em;
+}

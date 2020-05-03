@@ -50,4 +50,8 @@ export class CartService {
     cartItem.amount -= 1;
     console.log(this.items);
   }
+
+  public addToShoppingCart(item: Item) {
+    this.items.push(item);
+  }
 }
