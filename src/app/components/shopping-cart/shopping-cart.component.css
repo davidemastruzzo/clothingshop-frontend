@@ -5,7 +5,7 @@
   flex-wrap: wrap;
 }
 
-mat-card-content {
+mat-card-content, .item-content {
   display: flex;
   align-items: center;
 }

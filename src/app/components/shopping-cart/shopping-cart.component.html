@@ -2,7 +2,7 @@
   <mat-card class="overview-item">
     <mat-card-title>Cart</mat-card-title>
     <mat-card-content class="item" *ngFor="let item of cartItems">
-      <div (click)="detailService.showCartItem(item)" >
+      <div (click)="detailService.showCartItem(item)" class="item-content" >
         <img src="{{item.pictures[0].imageURL}}" alt="{{item.name}}" class="overview-image">
         <span class="item-name">
         {{item.name}}
