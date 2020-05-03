@@ -5,6 +5,21 @@
   flex-wrap: wrap;
 }
 
+mat-card-content {
+  display: flex;
+  align-items: center;
+}
+
+mat-card-actions {
+  display: flex;
+  flex-direction:column;
+  align-items: flex-start;
+}
+
+span, mat-icon {
+  margin-left: 5px;
+}
+
 .overview-item {
   width: 50em;
   margin: 3em;
@@ -14,8 +29,8 @@
 
 .overview-image {
   width: auto;
-  height: 20em;
-  max-width: 20em;
+  height: 5em;
+  max-width: 5em;
 }
 
 .content {

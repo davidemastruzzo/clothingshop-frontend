@@ -20,7 +20,7 @@ export class CartService {
       if (existingItem != null) {
         existingItem.amount += 1;
       } else {
-        const newCartItem = new CartItem(item.id, item.name, item.price, item.category, 1);
+        const newCartItem = new CartItem(item.id, item.name, item.price, item.category, item.pictures, 1);
         cartItems.push(newCartItem);
       }
     }

@@ -9,9 +9,23 @@ header {
   justify-content: space-between;
   background-color: mat-color($mat-indigo, 500);
 
-  h1 {
-    cursor: pointer;
-    margin: 0 0 0 10px;
+  #left-header {
+    h1 {
+      cursor: pointer;
+      margin: 0 0 0 10px;
+    }
+    align-items: center;
+    display: flex;
+
+    a {
+      margin-left: 20px;
+    }
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    margin-left: 4px; margin-right: 4px;
   }
 
   #router-links {
@@ -19,11 +33,6 @@ header {
     display: flex;
     align-items: center;
 
-    a {
-      color: white;
-      text-decoration: none;
-      margin-left: 4px; margin-right: 4px;
-    }
   }
 }
 

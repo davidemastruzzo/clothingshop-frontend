@@ -2,6 +2,7 @@
   <mat-card class="overview-item">
     <mat-card-title>Cart</mat-card-title>
     <mat-card-content class="item" *ngFor="let item of cartItems" (click)="showDetails(item)" >
+      <img src="{{item.pictures[0].imageURL}}" alt="{{item.name}}" class="overview-image">
       <span class="item-name">
         {{item.name}}
       </span>
@@ -17,7 +18,11 @@
       </span>
       <mat-icon (click)="addOne(item)">add_circle</mat-icon>
     </mat-card-content>
+    <mat-card-content *ngIf="cartItems.length === 0">
+      Your cart is empty
+    </mat-card-content>
     <mat-card-actions>
+      <span>Total amount: {{getTotalAmount()}} Fr</span>
       <button mat-icon-button>
         <mat-icon>payment</mat-icon>
         Pay

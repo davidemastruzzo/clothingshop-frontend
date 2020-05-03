@@ -9,7 +9,8 @@ import {CartItem} from '../../entities/cart-item';
   styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
-  cartItems: any;
+
+  cartItems: CartItem[] = [];
 
   constructor(public cartService: CartService) {
   }
@@ -18,8 +19,8 @@ export class ShoppingCartComponent implements OnInit {
     this.cartItems = this.cartService.getCartItems();
   }
 
-  showDetails(item: Item) {
-    console.log('test');
+  showDetails(item: CartItem) {
+    console.log('show detail');
   }
 
   addOne(item: CartItem) {
@@ -32,5 +33,13 @@ export class ShoppingCartComponent implements OnInit {
       const itemToBeRemoved = this.cartItems.find(cartItem => item.id === cartItem.id);
       this.cartItems.splice(this.cartItems.indexOf(itemToBeRemoved), 1);
     }
+  }
+
+  getTotalAmount(): number {
+    let amount = 0;
+    this.cartItems.forEach(cartItem => {
+      amount = amount + cartItem.amount * cartItem.price;
+    });
+    return amount;
   }
 }
